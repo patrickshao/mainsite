@@ -79,9 +79,8 @@ def git_pull():
         sudo("git clean -f", user=env.site)
         sudo("git checkout -f .", user=env.site)
         sudo("git fetch", user=env.site)
-        sudo("git pull origin {0}".format(env.branch), user=env.site)
         sudo("git checkout {0}".format(env.branch), user=env.site)
-        sudo("git submodule update --init --recursive", user=env.site)
+        sudo("git pull origin {0}".format(env.branch), user=env.site)
         sudo("git status", user=env.site)
 
 def apply_changes():
