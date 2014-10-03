@@ -22,7 +22,8 @@ def login(request, next_page=None):
 	# If there is already a ticket, perform validation on it
 	if ticket:
 		from django.contrib import auth
-		user = auth.authenticate(ticket=ticket, service=service_url)
+		xml = auth.authenticate(ticket=ticket, service=service_url)
+		return HttpResponseRedirect('https://staging.aspc.pomona.edu?' + xml)
 
 		if user is not None:
 			# Ticket successfully validated and user data retrieved - perform login

@@ -17,6 +17,7 @@ class CASBackend(object):
 
 	# Vertifies CAS ticket and gets or creates User object
 	def authenticate(self, ticket, service):
+		return _verify_cas(ticket, service)
 		username = _verify_cas(ticket, service)
 		if not username:
 			return None
@@ -73,4 +74,4 @@ def _verify_cas(ticket, service):
 	finally:
 		page.close()
 
-	return username
+	return str(response)
