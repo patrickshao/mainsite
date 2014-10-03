@@ -47,7 +47,7 @@ def _verify_cas(ticket, service):
 		'service': service
 	}
 
-	url = urljoin(settings.CAS_SETTINGS['CAS_SERVER_URL'], 'serviceValidate') + '?' + urlencode(params)
+	url = urljoin(settings.CAS_SETTINGS['SERVER_URL'], 'serviceValidate') + '?' + urlencode(params)
 	page = urlopen(url)
 	username = None
 
