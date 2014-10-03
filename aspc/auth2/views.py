@@ -112,6 +112,7 @@ def login(request, next_page=None, required=False, gateway=False):
 
     if ticket:
         from django.contrib import auth
+        return HttpResponseRedirect('http://staging.aspc.pomona/edu?' + ticket)
         user = auth.authenticate(ticket=ticket, service=service)
 
         if user is not None:
