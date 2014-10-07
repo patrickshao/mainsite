@@ -188,6 +188,7 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = "aspc.wsgi.application"
 
 ### Login Configuration
+# See auth2 module
 AUTHENTICATION_BACKENDS = (
 	'django.contrib.auth.backends.ModelBackend',
 	'aspc.auth2.backends.CASBackend', # Service to authenticate against the 5C CAS server
@@ -198,8 +199,8 @@ CAS_SETTINGS = {
 	'ADMIN_PREFIX': 'admin'
 }
 
-
-#### ASPC Specific Configuration
+#### Old Login Configuration (LDAP)
+# See auth module
 #
 # LDAP Authentication information
 #
@@ -230,6 +231,9 @@ CAS_SETTINGS = {
 #AUTH_LDAP_DEFAULT_COLLEGE = "PO"
 #
 #AUTH_LDAP_COLLEGES = ((i[0], i[1]['name']) for i in AUTH_LDAP.items())
+
+
+
 
 # Initial Data for Housing
 
