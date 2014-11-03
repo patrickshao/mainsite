@@ -65,7 +65,7 @@ def _verify_cas(ticket, service):
 	url = urljoin(settings.CAS_SETTINGS['SERVER_URL'], 'serviceValidate') + '?' + urlencode(params)
 	page = urlopen(url)
 	user_data = {
-		'user_name': '',
+		'username': '',
 		'first_name': '',
 		'last_name': '',
 		'email': ''
@@ -79,7 +79,7 @@ def _verify_cas(ticket, service):
 		if tree[0].tag.endswith('authenticationSuccess'):
 			user_data['last_name'] = tree[0][0][0].text
 			user_data['email'] = tree[0][0][1].text
-			user_data['user_name'] = tree[0][0][2].text
+			user_data['username'] = tree[0][0][2].text
 			user_data['first_name'] = tree[0][0][3].text
 
 		else:
