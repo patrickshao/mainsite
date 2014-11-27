@@ -138,11 +138,18 @@ using a Mac with [Homebrew] installed.
 
 ##Running on Windows##
 
-Running on Windows is a bit trickier due to line endings handled by Git. 
-Use these settings within Git.
-git config --global core.autocrlf false
-git config --global core.eol lf
-(Note as you can see this is a global change, which may cause unwanted changes
-to your other code. You can try to remove the global tag and see if it works.
-Additional information located on: http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows)
+Running on Windows is a bit trickier due to line endings handled by Git. Your
+eventual goal is to have your code run on Vagrant which uses a Unix line endings.
+
+The solution to this is to use these settings within Git.
+
+    git config --global core.autocrlf false
+    git config --global core.eol lf
+    
+Note as you can see this is a global change, which may cause unwanted changes
+to your other code. Removing the global tag should work, provided you are within 
+the mainsite directory.
+
+Additional information located on: http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows.
+
 Then reclone your files from Github and you should be ready!
