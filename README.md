@@ -135,3 +135,14 @@ using a Mac with [Homebrew] installed.
 [Vagrant]: http://vagrantup.com
 [http://localhost:8080/]: http://localhost:8000/
 [Homebrew]: http://brew.sh/
+
+##Running on Windows##
+
+Running on Windows is a bit trickier due to line endings handled by Git. 
+Use these settings within Git.
+git config --global core.autocrlf false
+git config --global core.eol lf
+(Note as you can see this is a global change, which may cause unwanted changes
+to your other code. You can try to remove the global tag and see if it works.
+Additional information located on: http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows)
+Then reclone your files from Github and you should be ready!
